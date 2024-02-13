@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/home.css ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    {% load static %}
+
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+              
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <div class="btns">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/Menus">Menu</a>
+                  </li> 
+                </ul>  
+              </div>
+              <div class="btns">
+                <button class="btn mx-2 button" type="button"><a href="/mail" >Login</a></button>
+              </div>
+              </div>
+            </div>
+          </nav>
+        
+        </div>
+       
+    <div class="background">
+      <img src="{% static 'images/bg-home.jpg' %}" >
+      <div class="background-text"> 
+           
+              <h1>Welcome to <span>Restaurantly</span></h1>
+               
+                <div class="btns">
+                  <a href="/Menus" >Our Menus</a>
+                  <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>  
+
+    <section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Reservation</h2>
+      <p>Book a Table</p>
+    </div>
+    <form action="/Book-Table" method="POST" role="form" class="book-a-table" data-aos="fade-up" data-aos-delay="100">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-4 col-md-6 form-group">
+          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+          
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <input type="date" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <input type="time" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+          
+        </div>
+        <div class="col-lg-4 col-md-6 form-group mt-3">
+          <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+          
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+        
+      </div>
+      <div class="text-center"><button type="submit">Book a Table</button></div>
+    </form>
+    {% if error_message %}
+    <div id="error-message" class="alert alert-danger" role="alert">
+      {{ error_message }}
+    </div>
+    {% endif %}
+
+    {% if success_message %}
+    <div id="success-message" class="alert alert-success" role="alert">
+      {{ success_message }}
+    </div>
+    {% endif %}     
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="container contact-detail" data-aos="fade-up">
+        <div class="row mt-5">
+          <div class="col-lg-3 col-md-6">
+            <div class="info text-center">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>123 R.k Nagar Chennai</p>
+            </div>
+          </div>
+      
+          <div class="col-lg-3 col-md-6">
+            <div class="info text-center">
+              <i class="bi bi-clock"></i>
+              <h4>Open Hours:</h4>
+              <p>Monday-Saturday:<br>10:00 AM - 22:00 PM</p>
+            </div>
+          </div>
+      
+          <div class="col-lg-3 col-md-6">
+            <div class="info text-center">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>restarurant@example.com</p>
+            </div>
+          </div>
+      
+          <div class="col-lg-3 col-md-6">
+            <div class="info text-center">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+91 1234567890</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Function to hide error message after 10 seconds
+        setTimeout(function() {
+          var errorMessage = document.getElementById("error-message");
+          if (errorMessage) {
+            errorMessage.style.display = "none";
+          }
+        }, 10000);
+    
+        // Function to hide success message after 10 seconds and redirect to home page
+        setTimeout(function() {
+          var successMessage = document.getElementById("success-message");
+          if (successMessage) {
+            successMessage.style.display = "none";
+            window.location.href = "/home"; // Change the URL to the home page URL
+          }
+        }, 10000);
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+    background-image: url("images/background.jpg");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.navigation {
+    background-color: transparent; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 1000; 
+    
+    padding-top: 5.5rem;
+  }
+  
+  .nav-item a{
+    color:#fff !important ;
+    
+  }
+  .navbar-nav{
+    margin-left: 45px;
+  }
+.btns {
+    display: flex;
+    margin-top: 1rem; /* Adjust as needed */
+  }
+  .btns a {
+    margin: 0 1rem; /* Adjust as needed */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    line-height: 1;
+    color: white;
+    border: 2px solid #cda45e;
+  
+  }
+ .button-link{
+  text-decoration: none;
+  margin: 0 1rem; /* Adjust as needed */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+ }
+ 
+.main-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+}
+
+.login-container {
+
+   height: 250px;
+    padding-top: 20px;
+    border-radius: 5px;
+
+    padding: 20px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 300px;
+    text-align: center;
+
+}
+
+
+.login-container input[type="email"],input[type="text"] {
+
+    width: 100%;
+
+    padding: 12px 20px;
+
+    margin: 8px 0;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+
+
+.login-container button[type="submit"] {
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    margin: 8px 0;
+
+    background-color: lightslategray;
+
+    color: black;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+}
+
+
+.login-container button[type="submit"]:hover {
+
+    background-color: #45a049;
+
+}
+
+
+.login-container p {
+
+    text-align: center;
+
+    margin-top: 10px;
+    color: ghostwhite;
+    font-size: 20px;
+}
+
+
+.login-container p a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+}
+
+
+.login-container p a:hover {
+
+    text-decoration: underline;
+
+}
